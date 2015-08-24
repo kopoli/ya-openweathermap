@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>{{cur.Name}}</strong> {{cur.Time}}
+                    <span class="pull-right badge">X</span>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="row">
+                                <i class="wi {{cur.Icon}}" style="font-size: 5em;" tooltip="{{cur.Desc}}"></i>
+                            </div>
+                            <div class="row">
+                                <ul class="list-unstyled">
+                                    <li> {{cur.Temp}}<i class="wi wi-celsius"></i></li>
+                                    <li> {{cur.Desc}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="wi wi-thermometer"></i> Min: {{cur.TempMin}}<i class="wi wi-celsius"></i> Max: {{cur.TempMax}}<i class="wi wi-celsius"></i></li>
+                                <li><i class="wi wi-humidity"></i> {{cur.Humidity}}</li>
+                                <li><i class="wi wi-strong-wind"></i> {{cur.WindSpeed}} m/s <i class="wi {{cur.WindDeg}}" tooltip="{{cur.WindDeg}}"></i></li>
+                                <li><i class="wi wi-sunrise"></i> {{cur.Sunrise}}</li>
+                                <li><i class="wi wi-sunset"></i> {{cur.Sunset}}</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2" ng-repeat="weather in forecast">
+                            <small>{{weather.Time}}</small> <br />
+                            <i class="wi {{weather.Icon}}" style="font-size: 2em;" tooltip="{{weather.Desc}}"></i> <br />
+                            {{weather.Temp}}<i class="wi wi-celsius"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
