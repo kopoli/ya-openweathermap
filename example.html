@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="ExampleApp">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="external/bootstrap-3.3.5.min.css">
+        <script type="text/javascript" src="external/angular-1.3.16.min.js"></script>
+        <!-- The weather icons do not have all symbols when minified (e.g. the wi-owm-* symbols) -->
+        <link rel="stylesheet" href="external/weather-icons-2.0.1/css/weather-icons.css">
+        <link rel="stylesheet" href="external/weather-icons-2.0.1/css/weather-icons-wind.css">
+        <script type="text/javascript" src="ya-openweathermap.js"></script>
+    </head>
+    <body ng-controller="WeatherCtrl">
+        <nav class="navbar navbar-default">
+            <p class="navbar-text">Weather forecast Demo</p>
+            <form class="navbar-form navbar-left" ng-submit="addCity()">
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="city" placeholder="Weather in city">
+                </div>
+                <button type="submit" class="btn btn-default">Add weather</button>
+            </form>
+        </nav>
+        <div class="container" ng-repeat="c in cities">
+            <ya-openweathermap city-name="{{c}}" api-key=""></ya-openweathermap>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+    var app = angular.module('ExampleApp',['ya-openweathermap']);
+    app.controller('WeatherCtrl', function($scope) {
+        $scope.cities = ['London']
+
+        $scope.addCity = function() {
+            $scope.cities.push($scope.city)
+        }
+    });
+    </script>
+</html>
