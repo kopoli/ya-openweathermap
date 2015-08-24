@@ -1,0 +1,36 @@
+* Yet another AngularJS Openweathermap widget
+
+  This is a lightweight [[http://openweathermap.org/][openweathermap]] widget for [[https://angularjs.org][AngularJS]] which uses the
+  [[https://github.com/erikflowers/weather-icons][weather-icons]].
+
+** Screenshot
+
+   [[./img/ya-openweathermap.png]]
+
+** External components
+
+   This is based on the following components:
+
+   - [[http://getbootstrap.com/][bootstrap]] 3.3.5
+   - [[http://angularjs.org][AngularJS]] 1.3.16
+   - [[https://github.com/erikflowers/weather-icons][weather-icons]] 2.0.1
+
+   They are included in the external directory.
+
+** Usage
+
+   The following displays a similar block to the screenshot:
+
+   #+begin_src html
+   <ya-openweathermap city-name="London" api-key="...."></ya-openweathermap>
+   #+end_src
+
+   The parameter /city-name/ is the city-name which will be given to the
+   openweathermap api. The /api-key/ is the key that you receive when you
+   register your app to the openweathermap service.
+
+   See the example.html for specific details.
+
+** License
+
+   MIT
